@@ -93,8 +93,8 @@ const mainNavItems = computed<NavItem[]>(() => {
           icon: LayoutGrid,
         },
         {
-          title: 'My Profile',
-          href: '/profile',
+          title: 'Request Now',
+          href: '/user/form',
           icon: Folder,
         },
         {

@@ -20,6 +20,10 @@ Route::middleware(['auth', 'citizen'])->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
+
+    Route::get('user/form', [App\Http\Controllers\ClientController::class, 'userForm'])->name('user.form');
+
+
    
 }); 
 
