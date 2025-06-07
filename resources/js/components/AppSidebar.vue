@@ -5,7 +5,7 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-vue-next';
+import { BookOpen, Folder, LayoutGrid, Users, MessageSquare,  } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 import { computed } from 'vue';
 
@@ -35,13 +35,35 @@ const mainNavItems = computed<NavItem[]>(() => {
         {
           title: 'User Management',
           href: '/admin/users',
-          icon: Folder,
+          icon: Users,
         },
-        {
-          title: 'Reports',
-          href: '/admin/reports',
+          {
+          title: 'Assistance List',
+          href: '/admin/assistance_list',
           icon: BookOpen,
         },
+        {
+            title: 'Assistance Forms',
+            href: '/admin/assistance_form',
+            icon: Folder,
+        },
+        {
+            title: 'Feedback',
+            href: '/admin/feedback',
+            icon: MessageSquare,
+        },
+        {
+            title: 'Service Experience',
+            href: '/admin/service_experience',
+            icon: BookOpen,
+        },
+        {
+            title: 'About',
+            href: '/admin/about',
+            icon: MessageSquare,
+        }
+       
+
       ];
 
     case 'lgu':

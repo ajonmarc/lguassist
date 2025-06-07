@@ -26,6 +26,8 @@ $table->enum('role', ['citizen','admin', 'lgu', ])->default('citizen');
 
  php artisan db:seed AdminSeeder
 
+ npm install vue-toastification@next
+
  
 
 

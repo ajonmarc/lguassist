@@ -6,18 +6,18 @@ import PlaceholderPattern from '../components/PlaceholderPattern.vue';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Citizen Dashboard',
-        href: '/dashboard',
+        title: 'Assistance Form',
+        href: '/admin/assistance_form',
     },
 ];
 </script>
 
 <template>
-    <Head title="Citizen Dashboard" />
+    <Head title="Assistance Form" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
-            Client Dashboard details...
+         Assistance Form details...
         </div>
     </AppLayout>
 </template>
