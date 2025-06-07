@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
@@ -27,14 +28,25 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
-    {
-        $request->authenticate();
+  public function store(LoginRequest $request): RedirectResponse
+{
+    $request->authenticate();
 
-        $request->session()->regenerate();
+    $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+    $role = Auth::user()?->role;
+
+    if ($role === UserRole::Admin) {
+        return redirect()->route("admin.dashboard")->with("success", "Welcome back, Admin!");
+    } elseif ($role === UserRole::Citizen) {
+        return redirect()->route("dashboard")->with("success", "Welcome back, Citizen!");
+    } elseif ($role === UserRole::LGU) {
+        return redirect()->route("lgu.dashboard")->with("success", "Welcome back, Local Government Unit!");
+    } else {
+        return redirect()->route("dashboard")->with("success", "Welcome back!");
     }
+}
+
 
     /**
      * Destroy an authenticated session.

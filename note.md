@@ -16,3 +16,20 @@
             credentials: true
         }
     },
+
+//
+$table->enum('role', ['citizen','admin', 'lgu', ])->default('citizen');
+
+ php artisan make:enum Enums/UserRole
+
+ $ php artisan make:seeder AdminSeeder
+
+ php artisan db:seed AdminSeeder
+
+ 
+
+
+
+
+
+
